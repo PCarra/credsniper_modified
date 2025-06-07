@@ -1,3 +1,20 @@
+Full credit to CredSniper this was modified as a POC for a presentation.  I'm using mitm proxy to capture creds sent to the github template.  Steps Below:
+1. Install mitmproxy: sudo apt install mitmproxy -y
+2. Generate cert: mitmproxy
+3. Install cert in browser cert located at: ~/.mitmproxy/mitmproxy-ca-cert.pem
+4. Run using: sudo mitmproxy --listen-port 8080
+5. Set foxy proxy to use the following socket for forwarding traffic to mitmproxy: 127.0.0.1:8080
+6. Install repo: git clone git@github.com:PCarra/credsniper_modified.git
+7. Install a python virtual environment: python3 -m venv venv
+8. Launch a python virtual environment: source venv/bin/activate
+9. Install requirements: pip install -r requirements
+10. Inside of CredSniper directory run: touch .cache
+11. Run credsniper: python3 credsniper.py --module github --twofactor --port 5000 --final https://github.com/login --hostname github.com
+12. Navigate to http://127.0.0.1:5000
+13. Enter creds
+14. Go to mitmproxy tab
+15. Find the packets of interest and use the down error to move the cursor then select by hitting enter to inspect the packet
+
 CredSniper
 ==================
 - [Overview](#overview)
