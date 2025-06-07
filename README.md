@@ -130,3 +130,4 @@ Note that Python 3 is required.
 **Bug reports, feature requests and patches are welcome.**
 
 [![Analytics](https://ga-beacon.appspot.com/UA-109055908-1/CredSniper/Readme)](https://github.com/ustayready/CredSniper)
+# credsniper_modified
